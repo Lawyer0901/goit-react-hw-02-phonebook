@@ -17,7 +17,6 @@ export class ContactForm extends Component {
   };
 
   hendleSubmit = e => {
-    // console.log(e.target.value);
     e.preventDefault();
     const { addUser } = this.props;
     addUser({ ...this.state });
