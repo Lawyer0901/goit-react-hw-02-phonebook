@@ -1,13 +1,21 @@
+import PropTypes from 'prop-types';
+import { LabelFilter, InputFilter } from './Filter.styled';
+
 export function Filter({ handleInputValue, filterValue }) {
   return (
-    <label htmlFor="">
+    <LabelFilter htmlFor="">
       Finde Contact by Name
-      <input
+      <InputFilter
         type="text"
         name="filter"
         onChange={handleInputValue}
         value={filterValue}
       />
-    </label>
+    </LabelFilter>
   );
 }
+
+Filter.propTypes = {
+  handleInputValue: PropTypes.func.isRequired,
+  filterValue: PropTypes.string.isRequired,
+};
