@@ -21,6 +21,7 @@ export class App extends Component {
       id: nanoid(),
       ...obj,
     };
+
     this.setState(prevSate => ({
       contacts: [...prevSate.contacts, newUser],
     }));
