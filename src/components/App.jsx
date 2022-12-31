@@ -21,10 +21,15 @@ export class App extends Component {
       id: nanoid(),
       ...obj,
     };
-
-    this.setState(prevSate => ({
-      contacts: [...prevSate.contacts, newUser],
-    }));
+    const existUser = this.state.contacts.some(el => el.name === newUser.name);
+    if (existUser) {
+      alert(`${newUser.name} is already in contacts`);
+      return null;
+    } else {
+      this.setState(prevSate => ({
+        contacts: [...prevSate.contacts, newUser],
+      }));
+    }
   };
 
   // Удаляет контакт из списка
